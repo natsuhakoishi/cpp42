@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 01:35:50 by yyean-wa          #+#    #+#             */
-/*   Updated: 2024/12/04 03:51:19 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/01/11 16:05:18 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,5 @@ void	PhoneBook::add(void)
 PhoneBook::PhoneBook(void)
 {
 	this->index = 0;
-	std::cout << "Welcome to PhoneBook v4.2 by NatsuhaKoishi" << std::endl;
+	std::cout << "\033[35mWelcome to PhoneBook v4.2 by NatsuhaKoishi\033[0m" << std::endl;
 }

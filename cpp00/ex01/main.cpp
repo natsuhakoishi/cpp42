@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2024/12/04 01:35:30 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/01/11 16:04:35 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 
 	while (input != "EXIT")
 	{
-		std::cout << "PhoneBook v4.2 > ";
+		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
 		std::getline(std::cin, input);
 		if (input == "ADD")
 			book.add();
