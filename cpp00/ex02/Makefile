@@ -6,12 +6,12 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 03:58:24 by yyean-wa          #+#    #+#              #
-#    Updated: 2024/12/04 04:55:56 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/01/13 16:31:41 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	g++ *.cpp -Wall -Wextra -Werror -std=c++98 -o account -pedantic
+	c++ *.cpp -Wall -Wextra -Werror -std=c++98 -o account -pedantic
 
 clean:
 	rm account

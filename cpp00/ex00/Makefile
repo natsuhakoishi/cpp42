@@ -6,12 +6,12 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 23:11:00 by yyean-wa          #+#    #+#              #
-#    Updated: 2024/12/04 05:10:09 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/01/13 16:31:30 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	g++ *.cpp -Wall -Wextra -Werror -std=c++98 -o megaphone -pedantic
+	c++ *.cpp -Wall -Wextra -Werror -std=c++98 -o megaphone -pedantic
 
 clean:
 	rm megaphone

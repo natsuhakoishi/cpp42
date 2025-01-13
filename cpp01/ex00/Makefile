@@ -6,12 +6,12 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/11 18:37:56 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/01/11 18:40:10 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/01/13 21:29:56 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	g++ *.cpp -Wall -Wextra -Werror -std=c++98 -o zombie -pedantic
+	c++ *.cpp -Wall -Wextra -Werror -std=c++98 -o zombie -pedantic
 
 clean:
 	rm zombie

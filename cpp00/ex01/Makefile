@@ -6,12 +6,12 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 00:04:26 by yyean-wa          #+#    #+#              #
-#    Updated: 2024/12/04 05:10:18 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/01/13 16:31:58 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	g++ *.cpp -Wall -Wextra -Werror -std=c++98 -o phonebook -pedantic
+	c++ *.cpp -Wall -Wextra -Werror -std=c++98 -o phonebook -pedantic
 
 clean:
 	rm phonebook

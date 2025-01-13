@@ -6,12 +6,12 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/11 19:45:59 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/01/11 19:47:39 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/01/13 21:31:44 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	g++ *.cpp -Wall -Wextra -Werror -std=c++98 -o violence -pedantic
+	c++ *.cpp -Wall -Wextra -Werror -std=c++98 -o violence -pedantic
 
 clean:
 	rm violence
