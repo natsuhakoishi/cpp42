@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:33 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/02 22:24:50 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/02 22:31:16 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+# ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	PhoneBook	book;
-	std::string	input;
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &copy);
+		ScavTrap &operator = (const ScavTrap &copy);
+		~ScavTrap();
+		void	attack(const std::string &target);
+		void	guardGate();
+};
 
-	while (input != "EXIT")
-	{
-		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
-}
+#endif

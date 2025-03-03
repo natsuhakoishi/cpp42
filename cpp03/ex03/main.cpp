@@ -5,31 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:33 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/02 22:36:30 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/03 00:47:11 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	PhoneBook	book;
-	std::string	input;
+	DiamondTrap dt("Ryo");
+	DiamondTrap dt2(dt);
+	DiamondTrap dt3("Nijika");
+	DiamondTrap dt4;
+	dt4 = dt3;
 
-	while (input != "EXIT")
-	{
-		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
+	dt.whoAmI();
+	dt2.whoAmI();
+	dt3.whoAmI();
+	dt4.whoAmI();
+	dt.highFiveGuys();
+	dt2.takeDamage(999);
+	dt3.attack("Ryo who dont return money");
+	dt4.guardGate();
 	return (0);
 }

@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:33 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/02 23:45:50 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/03 00:20:27 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	PhoneBook	book;
-	std::string	input;
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &copy);
+		FragTrap &operator = (const FragTrap &copy);
+		~FragTrap();
+		void	highFiveGuys();
+};
 
-	while (input != "EXIT")
-	{
-		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
-}
+#endif

@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 16:32:16 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/27 22:43:12 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/02 21:12:41 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/02 22:39:44 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
+# include <string>
 # include <iostream>
 
-class Fixed
+class ClapTrap
 {
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed &operator = (const Fixed &copy);
-		~Fixed();
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &copy);
+		ClapTrap &operator = (const ClapTrap &copy);
+		~ClapTrap();
+		void	attack(const std::string &target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-
-	private:
-		int	raw;
-		const static int frac_bit = 8;
+	protected:
+		std::string		name;
+		unsigned int	hp;
+		unsigned int	energy;
+		unsigned int	dmg;
 };
 
 #endif

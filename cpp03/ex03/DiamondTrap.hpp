@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:33 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/03 00:05:32 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/03 00:27:56 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int	main(void)
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap , public FragTrap
 {
-	PhoneBook	book;
-	std::string	input;
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &copy);
+		DiamondTrap &operator = (const DiamondTrap &copy);
+		~DiamondTrap();
+		void	whoAmI();
 
-	while (input != "EXIT")
-	{
-		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
-}
+	private:
+		std::string	name;
+};
+
+#endif

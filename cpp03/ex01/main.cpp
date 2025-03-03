@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 00:35:14 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/02/25 01:10:33 by yyean-wa         ###   ########.fr       */
+/*   Created: 2025/03/02 22:36:30 by yyean-wa          #+#    #+#             */
+/*   Updated: 2025/03/03 00:14:20 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	PhoneBook	book;
-	std::string	input;
+	ScavTrap st("Ryo");
+	ScavTrap st2(st);
+	ScavTrap st3("Nijika");
+	ScavTrap st4;
 
-	while (input != "EXIT")
-	{
-		std::cout << "\033[33mPhoneBook v4.2 (ADD | SERACH | EXIT) > \033[0m";
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
+	st.guardGate();
+	st.attack("Kita");
+	st2.attack("Bocchi");
+	st3.takeDamage(10);
+	st4 = st3;
+	st4.beRepaired(110);
+	st4.takeDamage(200);
+	st3.beRepaired(10);
+	for (int a = 0; a < 50; a++)
+		st.attack("Money");
+	st2.takeDamage(199);
+	st2.attack("Guitar Hero");
 	return (0);
 }
