@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 02:42:31 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/03/04 04:24:54 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:08:46 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int	main()
 {
-	Animal* ryo = new Animal(); // fail to compile means it is abstract class
-	// Animal* bocchi = new Cat();
-	// delete bocchi;
+	// Animal* ryo = new Animal(); // fail to compile means it is abstract class
+	Animal* bocchi = new Cat();
+	delete bocchi;
 	return 0;
 }
 
