@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:42 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/03/23 17:51:14 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/03/23 18:10:17 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat() : name("Normal Bureaucrat")
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
-	std::cout << "Default Constructor /w Vars called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
