@@ -6,14 +6,14 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/23 16:31:45 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/03/23 16:32:28 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/03/25 23:20:01 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
 
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -pedantic
 
 OBJDIR = obj
 
@@ -39,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-# valgrind --leak-check=full --show-leak-kinds=all ./bureaucrat
+# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bureaucrat

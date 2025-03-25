@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:42 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/03/23 18:10:17 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/03/25 23:08:50 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.getName()), grade(copy.getGrade())
 {
 	std::cout << "Copy Constructor called" << std::endl;
+}
+
+Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &copy)
+{
+	std::cout << "Copy Assignment Operator called" << std::endl;
+	if (this != &copy)
+		grade = copy.getGrade();
+	return (*this);
 }
 
 Bureaucrat::~Bureaucrat()

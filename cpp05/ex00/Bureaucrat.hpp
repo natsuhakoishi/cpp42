@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:44 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/03/23 17:48:47 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/03/25 22:34:33 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
-		//CAO not assist cuz name is const cant be reassign, hence CAO cant be implemented
+		Bureaucrat &operator = (const Bureaucrat &copy);
 		~Bureaucrat();
 
 		class GradeTooHighException : public std::exception
