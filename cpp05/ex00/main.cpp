@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:46 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/03/25 23:23:00 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:48:09 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,28 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << "--- OCCF Test ---" << std::endl;
 	std::cout << std::endl;
-	Bureaucrat *a = new Bureaucrat("42KL", 5);
-	Bureaucrat b(*a);
-	Bureaucrat *c = new Bureaucrat("42Penang", 90);
-	*c = *a;
-	std::cout << "\033[92m" << *a << "\033[0m" << std::endl;
-	std::cout << "\033[92m" << b << "\033[0m" << std::endl;
-	std::cout << "\033[92m" << *c << "\033[0m" << std::endl;
-	delete a;
-	delete c;
+	try
+	{
+		Bureaucrat *a = new Bureaucrat("42KL", 5);
+		Bureaucrat b(*a);
+		Bureaucrat *c = new Bureaucrat("42Penang", 90);
+		*c = *a;
+		std::cout << "\033[92m" << *a << "\033[0m" << std::endl;
+		std::cout << "\033[92m" << b << "\033[0m" << std::endl;
+		std::cout << "\033[92m" << *c << "\033[0m" << std::endl;
+		std::cout << std::endl;
+		a->increment();
+		b.decrement();
+		c->decrement();
+		c->decrement();
+		std::cout << "\033[92m" << *a << "\033[0m" << std::endl;
+		std::cout << "\033[92m" << b << "\033[0m" << std::endl;
+		std::cout << "\033[92m" << *c << "\033[0m" << std::endl;
+		delete a;
+		delete c;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
