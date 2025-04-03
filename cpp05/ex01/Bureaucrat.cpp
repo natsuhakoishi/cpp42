@@ -6,21 +6,22 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:42 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/03 16:15:50 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:33:29 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default Bureaucrat")
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Bureaucrat: Default Constructor called" << std::endl;
 	this->grade = 150;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Bureaucrat: Default Constructor called" << std::endl;
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
@@ -31,12 +32,12 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.getName()), grade(copy.getGrade())
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "Bureaucrat: Copy Constructor called" << std::endl;
 }
 
 Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &copy) //name cant assign cuz is const
 {
-	std::cout << "Copy Assignment Operator called" << std::endl;
+	std::cout << "Bureaucrat: Copy Assignment Operator called" << std::endl;
 	if (this != &copy)
 		grade = copy.getGrade();
 	return (*this);
@@ -44,7 +45,7 @@ Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &copy) //name cant assign c
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Bureaucrat: Destructor called" << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
@@ -86,4 +87,9 @@ void	Bureaucrat::decrement()
 std::ostream &operator << (std::ostream &fout, const Bureaucrat &obj)
 {
 	return (fout << obj.getName() << ", bureaucrat grade " << obj.getGrade());
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	form.beSigned(*this);
 }
