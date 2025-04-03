@@ -6,7 +6,7 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/23 16:31:45 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/04/03 21:45:48 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/04/03 21:50:01 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98 -fsanitize=addres
 
 OBJDIR = obj
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 all: $(NAME)
