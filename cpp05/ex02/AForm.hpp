@@ -28,7 +28,7 @@ class AForm
 		AForm(const std::string name, const int gr_sign, const int gr_exec);
 		AForm(const AForm &copy);
 		AForm &operator = (const AForm &copy);
-		~AForm();
+		virtual ~AForm();
 
 		class GradeTooHighException : public std::exception
 		{
@@ -42,11 +42,19 @@ class AForm
 				const char *what() const throw();
 		};
 
+		class FormNotSignedExecption : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
 		std::string	getName() const;
 		bool		getIsSigned() const;
 		int			getGradeSign() const;
 		int			getGradeExec() const;
 		void		beSigned(const Bureaucrat &b);
+		void		execute(Bureaucrat const &executor) const;
+		virtual void		inform() const = 0;
 
 	private:
 		const std::string	name;

@@ -33,7 +33,7 @@ AForm::AForm(const AForm &copy) : name(copy.getName()), is_signed(copy.getIsSign
 	*this = copy;
 }
 
-AForm	&AForm::operator = (const AForm &copy) //cant assign cuz all vars is const
+AForm	&AForm::operator = (const AForm &copy) //cant assign cuz all vars is const and bool is flag(no need)
 {
 	std::cout << "AForm: Copy Assignment Operator called" << std::endl;
 	(void)copy;
@@ -53,6 +53,11 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("AForm: Grade can't lower than 150");
+}
+
+const char *AForm::FormNotSignedExecption::what() const throw()
+{
+	return ("AForm: From is Not Signed");
 }
 
 std::string	AForm::getName() const
@@ -87,6 +92,16 @@ void	AForm::beSigned(const Bureaucrat &b)
 		std::cout << b << " couldn't sign " << *this << ", because grade too low." << std::endl;
 		throw (AForm::GradeTooLowException());
 	}
+}
+
+void	AForm::execute(Bureaucrat const &executor) const
+{
+	if (this->is_signed == 0)
+		throw (AForm::FormNotSignedExecption());
+	if (executor.getGrade() > this->gr_exec)
+		throw (AForm::GradeTooLowException());
+	std::cout << executor.getName() << " executing the form." << std::endl;
+	this->inform();
 }
 
 std::ostream &operator << (std::ostream &fout, const AForm &obj)

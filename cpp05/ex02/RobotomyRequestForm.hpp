@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:48:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/04 21:15:12 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/07 17:10:58 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
+# include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {
@@ -27,6 +28,6 @@ class RobotomyRequestForm : public AForm
 
 	private:
 		std::string	target;
-}
+};
 
 #endif

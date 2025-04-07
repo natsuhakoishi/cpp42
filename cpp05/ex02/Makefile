@@ -6,7 +6,7 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/23 16:31:45 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/04/03 21:50:01 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/04/07 17:23:05 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ $(OBJDIR):
 
 clean:
 	@rm -rf $(OBJDIR)
+	@rm -rf *_shrubbery
 
 fclean: clean
 	@rm -f $(NAME)

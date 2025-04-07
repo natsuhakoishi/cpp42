@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:48:09 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/04 21:21:38 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/07 17:10:55 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm &operator = (const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
-		void	create() const;
+		void	inform() const;
 
 	private:
 		std::string	target;
-}
+};
 
 #endif

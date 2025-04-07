@@ -6,12 +6,12 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:32:42 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/04 21:36:52 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/07 17:12:42 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default Bureaucrat")
 {
@@ -91,5 +91,26 @@ std::ostream &operator << (std::ostream &fout, const Bureaucrat &obj)
 
 void	Bureaucrat::signForm(AForm &form)
 {
-	form.beSigned(*this);
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " successfully signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
