@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 17:49:10 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/07 19:07:01 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/10 07:12:06 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 Intern::Intern()
 {
-	std::cout << "Intern: Default Constructor called." << std::endl;
+	std::cout << "Intern: Default Constructor called" << std::endl;
 }
 
 Intern::Intern(const Intern &copy)
 {
-	std::cout << "Intern: Copy Constructor called." << std::endl;
+	std::cout << "Intern: Copy Constructor called" << std::endl;
 	(void)copy;
 }
 
 Intern &Intern::operator = (const Intern &copy)
 {
-	std::cout << "Intern: Copy Assignment Operator called." << std::endl;
+	std::cout << "Intern: Copy Assignment Operator called" << std::endl;
 	(void)copy;
 	return (*this);
 }
 
 Intern::~Intern()
 {
-	std::cout << "Intern: Destructor called." << std::endl;
+	std::cout << "Intern: Destructor called" << std::endl;
 }
 
 const char *Intern::InvalidForm::what() const throw()

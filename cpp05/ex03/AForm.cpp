@@ -52,7 +52,7 @@ const char *AForm::GradeTooHighException::what() const throw()
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("AForm: Grade can't lower than 150");
+	return ("AForm: Grade too low");
 }
 
 const char *AForm::FormNotSignedExecption::what() const throw()
@@ -100,7 +100,7 @@ void	AForm::execute(Bureaucrat const &executor) const
 		throw (AForm::FormNotSignedExecption());
 	if (executor.getGrade() > this->gr_exec)
 		throw (AForm::GradeTooLowException());
-	std::cout << executor.getName() << " executing the form." << std::endl;
+	std::cout << executor.getName() << " executing the form..." << std::endl;
 	this->inform();
 }
 

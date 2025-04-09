@@ -6,50 +6,60 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 15:35:45 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/07 19:08:56 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/10 07:10:49 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 
-int	main()
+int	main(void)
 {
-	Intern intern;
-	Bureaucrat guy("guy", 1);
+	Intern	intern;
+	Bureaucrat	nijika("Nijika", 1);
 
-	std::cout << std::endl << "------------ ROBOT ------------" << std::endl;
-	AForm *robot = intern.makeForm("ROBOTOMY request", "robot");
-	std::cout << "target is: " << robot->getTarget() << std::endl;
-	guy.signForm(*robot);
-	guy.executeForm(*robot);
-	delete robot;
+	std::cout << std::endl;
+	std::cout << "--- Test for PPF ---" << std::endl;
+	std::cout << std::endl;
+	AForm *RoboForm = intern.makeForm("robotomy request", "Robot Ryo");
+	std::cout << "Intern: Target is " << RoboForm->getTarget() << std::endl;
+	nijika.signForm(*RoboForm);
+	nijika.executeForm(*RoboForm);
+	delete RoboForm;
+	std::cout << std::endl;
 
-	std::cout << std::endl << "------------ SHRUB ------------" << std::endl;
-	AForm *shrub = intern.makeForm("SHRUBBERY creation", "shrub");
-	std::cout << "target is: " << shrub->getTarget() << std::endl;
-	guy.signForm(*shrub);
-	guy.executeForm(*shrub);
-	delete shrub;
+	std::cout << std::endl;
+	std::cout << "--- Test for PPF ---" << std::endl;
+	std::cout << std::endl;
+	AForm *PresForm = intern.makeForm("PRESIDENTIAL PARDON", "President Dorito");
+	std::cout << "Intern: Target is " << PresForm->getTarget() << std::endl;
+	nijika.signForm(*PresForm);
+	nijika.executeForm(*PresForm);
+	delete PresForm;
+	std::cout << std::endl;
 
-	std::cout << std::endl << "------------ PRESIDENT ------------" << std::endl;
-	AForm *president = intern.makeForm("PRESIDENTIAL pardon", "president");
-	std::cout << "target is: " << president->getTarget() << std::endl;
-	guy.signForm(*president);
-	guy.executeForm(*president);
-	delete president;
+	std::cout << std::endl;
+	std::cout << "--- Test for SCF ---" << std::endl;
+	std::cout << std::endl;
+	AForm *ShrubForm = intern.makeForm("ShRuBbErY CrEaTiOn", "Tree_Bocchi");
+	std::cout << "Intern: Target is " << ShrubForm->getTarget() << std::endl;
+	nijika.signForm(*ShrubForm);
+	nijika.executeForm(*ShrubForm);
+	delete ShrubForm;
+	std::cout << std::endl;
 
-	std::cout << std::endl << "------------ FAIL ------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << "--- Test for Invalid case ---" << std::endl;
+	std::cout << std::endl;
 	try
 	{
-		AForm *fail = intern.makeForm("fail", "fail");
-		std::cout << "what??: " << fail->getName() << std::endl;
-		delete fail;
+		AForm *invalid = intern.makeForm("Invalid", "Kita");
+		std::cout << "Intern: Target is " << invalid->getTarget() << std::endl; //should not output
+		delete invalid;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	std::cout << std::endl << "----------------------------" << std::endl;
+	std::cout << std::endl;
 }

@@ -6,11 +6,11 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/23 16:31:45 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/04/07 19:01:48 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/04/09 17:19:33 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = form
+NAME = intern
 
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98 -fsanitize=address -g3 -pedantic

@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 15:40:33 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/03 21:38:31 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/10 05:42:48 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Form::Form(const std::string name, const int gr_sign, const int gr_exec) : name(
 Form::Form(const Form &copy) : name(copy.getName()), is_signed(copy.getIsSigned()), gr_sign(copy.getGradeSign()), gr_exec(copy.getGradeExec())
 {
 	std::cout << "Form: Copy Constructor called" << std::endl;
-	*this = copy;
 }
 
 Form	&Form::operator = (const Form &copy) //cant assign cuz all vars is const

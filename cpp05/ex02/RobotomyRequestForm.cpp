@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:48:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/07 16:42:35 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/10 07:12:46 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm: Default Constructor called." << std::endl;
+	std::cout << "RobotomyRequestForm: Default Constructor called" << std::endl;
 	this->target = "Default";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm: Default Constructor (target) called." << std::endl;
+	std::cout << "RobotomyRequestForm: Default Constructor (target) called" << std::endl;
 	this->target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm(copy)
 {
-	std::cout << "RobotomyRequestForm: Copy Constructor called." << std::endl;
+	std::cout << "RobotomyRequestForm: Copy Constructor called" << std::endl;
 	this->target = copy.target;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &copy)
 {
-	std::cout << "RobotomyRequestForm: Copy Assignment Operator called." << std::endl;
+	std::cout << "RobotomyRequestForm: Copy Assignment Operator called" << std::endl;
 	if (this != &copy)
 		this->target = copy.target;
 	return (*this);
@@ -40,7 +40,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm 
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm: Destructor called." << std::endl;
+	std::cout << "RobotomyRequestForm: Destructor called" << std::endl;
 }
 
 void	RobotomyRequestForm::inform() const
