@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 04:56:04 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/14 05:48:59 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/14 06:19:40 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <stdint.h>
+
+// typedef unsigned long uintptr_int
 
 struct Data
 {
