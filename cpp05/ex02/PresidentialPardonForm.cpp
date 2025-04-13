@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:47:55 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/10 07:12:34 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/13 16:03:04 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 	this->target = target;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm(copy)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm("PresidentialPardonForm", 25, 5)
 {
 	std::cout << "PresidentialPardonForm: Copy Constructor called" << std::endl;
 	this->target = copy.target;

@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 15:35:45 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/10 06:50:05 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/13 16:24:21 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(void)
 	AForm *RoboForm2 = new RobotomyRequestForm("Robot Yellow Chips");
 	AForm *ShrubForm = new ShrubberyCreationForm("Ringgit");
 	AForm *ShrubForm2 = new ShrubberyCreationForm("Dorito");
+	AForm *CopyForm = new PresidentialPardonForm(*static_cast<PresidentialPardonForm *>(PresForm));
 
 	std::cout << std::endl;
 	std::cout << "--- Check Bureaucrats Details ---" << std::endl;
@@ -48,6 +49,7 @@ int	main(void)
 	std::cout << (*RoboForm2) << std::endl;
 	std::cout << (*ShrubForm) << std::endl;
 	std::cout << (*ShrubForm2) << std::endl;
+	std::cout << (*CopyForm) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << std::endl;
@@ -79,6 +81,10 @@ int	main(void)
 	nijika.executeForm(*ShrubForm2);
 	std::cout << std::endl;
 
+	kita.signForm(*CopyForm);
+	kita.executeForm(*CopyForm);
+	std::cout << std::endl;
+
 	std::cout << std::endl;
 	std::cout << "--- Check Form Signed Status ---" << std::endl;
 	std::cout << std::endl;
@@ -87,6 +93,7 @@ int	main(void)
 	std::cout << (*RoboForm) << std::endl;
 	std::cout << (*RoboForm2) << std::endl;
 	std::cout << (*ShrubForm) << std::endl;
+	std::cout << (*CopyForm) << std::endl;
 	std::cout << std::endl;
 
 	delete PresForm;
@@ -95,4 +102,5 @@ int	main(void)
 	delete RoboForm2;
 	delete ShrubForm;
 	delete ShrubForm2;
+	delete CopyForm;
 }
