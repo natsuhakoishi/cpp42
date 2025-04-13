@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 05:51:59 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/14 06:02:17 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/14 06:15:07 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <exception>
 
 class Base
 {
