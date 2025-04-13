@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 22:18:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/13 23:49:13 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/14 06:24:24 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <cctype>
 # include <climits>
 # include <cstdlib>
-# include <algorithm>
 
 class ScalarConverter
 {
