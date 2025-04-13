@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 22:17:40 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/13 23:59:24 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/14 00:04:10 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	define_type(std::string literal)
 		return (CHAR);
 	if (literal[literal.length() - 1] == 'f' && check_number(literal.substr(0, literal.length() - 1)))
 		return (FLOAT);
-	if (literal.find('.') != (size_t)-1 && check_number(literal))
+	if (literal.find('.') != (size_t) -1 && check_number(literal))
 		return (DOUBLE);
 	if (check_number(literal))
 		return (INT);
