@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 05:52:01 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/14 06:12:50 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:52:45 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	identify(Base *p)
 		std::cout << "Pointer -> Class B" << std::endl;
 	else if (dynamic_cast<C *>(p) != NULL)
 		std::cout << "Pointer -> Class C" << std::endl;
+	else
+		std::cout << "Error: Pointer Unknown Class" << std::endl;
 }
 
 void	identify(Base &p)
@@ -62,5 +64,6 @@ void	identify(Base &p)
 	}
 	catch(const std::exception& e)
 	{}
+	std::cout << "Error: Reference Unknown Class" << std::endl;
 }
 
