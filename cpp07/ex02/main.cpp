@@ -1,6 +1,5 @@
 #include <iostream>
-#include <Array.hpp>
-
+#include "Array.hpp"
 #define MAX_VAL 750
 int main(int, char**)
 {
@@ -48,6 +47,56 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
+
+// #include "Array.tpp"
+
+// int main()
+// {
+// 	Array<int> arr1;
+// 	std::cout << "arr1 size: " << arr1.size() << std::endl;
+// 	std::cout << std::endl;
+
+// 	Array<int> arr2(5);
+// 	std::cout << "arr2 size: " << arr2.size() << std::endl;
+// 	std::cout << std::endl;
+
+// 	arr2[0] = 42;
+// 	arr2[1] = 88;
+// 	arr2[2] = 64;
+// 	std::cout << "arr2[0]: " << arr2[0] << std::endl;
+// 	std::cout << "arr2[1]: " << arr2[1] << std::endl;
+// 	std::cout << "arr2[2]: " << arr2[2] << std::endl;
+// 	std::cout << std::endl;
+
+// 	try
+// 	{
+// 		std::cout << "arr2[5]: " << arr2[5] << std::endl;
+// 	}
+// 	catch (const std::exception& e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+
+// 	std::cout << std::endl;
+// 	Array<int> cpy = arr2;
+// 	std::cout << "arr2 size: " << cpy.size() << std::endl;
+
+// 	std::cout << "cpy[0]: " << cpy[0] << std::endl;
+// 	std::cout << "cpy[1]: " << cpy[1] << std::endl;
+// 	std::cout << "cpy[2]: " << cpy[2] << std::endl;
+
+// 	std::cout << std::endl;
+// 	try
+// 	{
+// 		std::cout << "cpy[5]: " << cpy[5] << std::endl;
+// 	}
+// 	catch (const std::exception& e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// 	std::cout << std::endl;
+// 	return 0;
+// }
