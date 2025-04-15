@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:06:31 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/15 19:28:19 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:38:45 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	iter(T *array, int length, F (*ft)(T &))
 {
 	for (int i = 0; i < length; i++)
 		ft(array[i]);
+}
+
+template <typename T>
+void	printT(T &type)
+{
+	std::cout << type << std::endl;
 }
 
 #endif

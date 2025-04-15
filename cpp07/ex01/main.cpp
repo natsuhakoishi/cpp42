@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:06:28 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/15 19:29:16 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:39:31 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int	main(void)
 	iter<std::string, void>(str, length, printStr);
 	std::cout << std::endl;
 	iter<float, int>(fl, length, printFloat);
+	std::cout << std::endl;
+	iter<int, void>(num, length, printT);
 	std::cout << std::endl;
 }
