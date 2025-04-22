@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:52:48 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/22 21:03:08 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:24:43 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ Span::~Span()
 
 void	Span::addNumber(unsigned int nbr)
 {
-	if (container.size() >= N)
+	if (this->container.size() >= N)
 		throw (ContainerFullException());
-	container.push_back(nbr);
+	this->container.push_back(nbr);
 }
 
 void	Span::addNumberProMax(std::vector<unsigned int> nbrs)
@@ -64,29 +64,29 @@ void	Span::addNumberProMax(std::vector<unsigned int> nbrs)
 
 void	Span::printElement()
 {
-	for (std::vector<unsigned int>::iterator i = container.begin(); i != this->container.end(); i++)
+	for (std::vector<unsigned int>::iterator i = this->container.begin(); i < this->container.end(); i++)
 		std::cout << *i << std::endl;
 }
 
 int	Span::shortestSpan()
 {
-	if (container.size() <= 1)
+	if (this->container.size() <= 1)
 		throw (SpanNotFoundException());
 	std::sort(this->container.begin(), this->container.end());
-	unsigned int	span = container[1] - container[0];
+	unsigned int	span = this->container[1] - this->container[0];
 	for (size_t i = 1; i < this->container.size() - 1; i++)
 	{
-		if ((container[i + 1] - container[i]) < span)
-			span = container[i + 1] - container[i];
+		if ((this->container[i + 1] - this->container[i]) < span)
+			span = this->container[i + 1] - this->container[i];
 	}
 	return (span);
 }
 
 int	Span::longestSpan()
 {
-	if (container.size() <= 1)
+	if (this->container.size() <= 1)
 		throw (SpanNotFoundException());
 	std::sort(this->container.begin(), this->container.end());
-	unsigned int	span = container.back() - container.front();
+	unsigned int	span = this->container.back() - this->container.front();
 	return (span);
 }
