@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:41:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/26 15:04:15 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/26 15:34:31 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ BitcoinExchange::~BitcoinExchange() {}
 
 const char *InvalidInputException::what() const throw()
 {
-	return ("Exception: Error: Input is not valid");
+	return ("Exception: Error: Input is invalid");
 }
 
 const char *ValueNotValidException::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:41:27 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/26 14:45:43 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/26 15:28:36 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	{
 		std::cout << "Error: Cannot open files" << std::endl;
 		std::cout << "Hints: ./btc input.txt" << std::endl;
-		return (0);
+		return (1);
 	}
 
 	BitcoinExchange	btc;
