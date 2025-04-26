@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:52:48 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/22 21:24:43 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/26 13:17:32 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ Span	&Span::operator = (const Span &copy)
 Span::~Span()
 {
 	std::cout << "Span: Destructor called" << std::endl;
+}
+
+const char	*ContainerFullException::what() const throw()
+{
+	return ("Exception: The Container is Full");
+}
+
+const char *SpanNotFoundException::what() const throw()
+{
+	return ("Exception: Span Not Found");
 }
 
 void	Span::addNumber(unsigned int nbr)

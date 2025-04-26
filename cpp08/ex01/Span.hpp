@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:53:07 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/22 20:50:19 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/26 13:16:45 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,17 @@
 
 # include <iostream>
 # include <vector>
-# include <iterator>
 # include <algorithm>
 # include <cstdlib>
 
 class ContainerFullException : public std::exception
 {
-	const char *what() const throw()
-	{
-		return ("Exception: The Container is Full");
-	}
+	const char *what() const throw();
 };
 
 class SpanNotFoundException : public std::exception
 {
-	const char *what() const throw()
-	{
-		return ("Exception: Span Not Found");
-	}
+	const char *what() const throw();
 };
 
 class Span
