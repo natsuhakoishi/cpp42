@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/26 15:33:35 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/27 22:28:35 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ class RPN
 		RPN(const RPN &copy);
 		RPN	&operator = (const RPN &copy);
 		~RPN();
-		void	cookRPN(std::string input);
+		void	solveRPN(std::string input);
+		void	parseInput(std::string input);
+		void	operateRPN(char op);
+		int		calculateRPN(char op, int a, int b);
 
 	private:
 		std::stack<int>	stack;
