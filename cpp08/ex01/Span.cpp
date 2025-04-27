@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:52:48 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/26 13:17:32 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/04/27 23:38:35 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 Span::Span()
 {
-	std::cout << "Span: Default Constructor called" << std::endl;
 	this->N = 0;
 }
 
 Span::Span(unsigned int N)
 {
-	std::cout << "Span: Default Constructor /w Arg called" << std::endl;
 	this->N = N;
 }
 
 Span::Span(const Span &copy)
 {
-	std::cout << "Span: Copy Constructor called" << std::endl;
 	this->N = copy.N;
 	this->container = copy.container;
 }
 
 Span	&Span::operator = (const Span &copy)
 {
-	std::cout << "Span: Copy Assignment Operator called" << std::endl;
 	if (this != &copy)
 	{
 		this->N = copy.N;
@@ -42,10 +38,7 @@ Span	&Span::operator = (const Span &copy)
 	return (*this);
 }
 
-Span::~Span()
-{
-	std::cout << "Span: Destructor called" << std::endl;
-}
+Span::~Span() {}
 
 const char	*ContainerFullException::what() const throw()
 {
