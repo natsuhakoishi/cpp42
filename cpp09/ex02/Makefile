@@ -6,7 +6,7 @@
 #    By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/23 16:31:45 by yyean-wa          #+#    #+#              #
-#    Updated: 2025/04/25 19:38:26 by yyean-wa         ###   ########.fr        #
+#    Updated: 2025/05/02 21:25:13 by yyean-wa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98 -g3 -pedantic
 
 OBJDIR = obj
 
-SRCS = main.cpp
+SRCS = main.cpp PmergeMe.cpp
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 all: $(NAME)
