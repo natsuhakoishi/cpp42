@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:44:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/02 21:34:58 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/04 22:07:05 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ int	main(int argc, char **argv)
 	std::cout << "Before: ";
 	pmergeme.printVector();
 	std::cout << std::endl;
+
+	struct timeval	time;
+	gettimeofday(&time, 0);
+	unsigned long	startS = time.tv_sec;
+	unsigned long	startMs = time.tv_usec;
+
+	pmergeme.sortVector();
 
 	return (0);
 }
