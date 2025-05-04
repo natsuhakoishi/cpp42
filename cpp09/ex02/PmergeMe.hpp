@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:52 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/04 21:48:08 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/04 23:09:15 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class PmergeMe
 		void	fillList(std::vector<int> temp);
 		void	printList();
 		// void	sortList();
+
+		int		ft_jacobsthal(int n);
 
 	private:
 		std::vector<int>	vector;

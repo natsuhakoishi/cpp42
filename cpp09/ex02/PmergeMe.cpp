@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:44 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/04 22:06:41 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/04 23:25:53 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,16 @@ void	PmergeMe::printList()
 {
 	for (std::list<int>::iterator it = this->list.begin(); it != this->list.end(); it++)
 		std::cout << " " << *it;
+}
+
+int		PmergeMe::ft_jacobsthal(int n)
+{
+	// Formula: J(0) = 0, J(1) = 1, J(n) = J(n-1) + 2 * J(n-2)
+	if (n == 0)
+		return (0);
+	if (n == 1)
+		return (1);
+	return (ft_jacobsthal(n - 1) + (2 * ft_jacobsthal(n - 2)));
 }
 
 void	PmergeMe::mergeSortVector(std::vector<std::pair<int, int> > &v)
@@ -118,5 +128,40 @@ void	PmergeMe::sortVector()
 		pair.push_back(temp);
 	}
 	mergeSortVector(pair);
+
 	this->vector.clear();
+	std::vector<int>	tbiVector;
+
+	for (std::vector<std::pair<int, int> >::iterator	it = pair.begin(); it != pair.end(); it++)
+	{
+		tbiVector.push_back((*it).first);
+		this->vector.push_back((*it).second);
+	}
+
+	this->vector.insert(this->vector.begin(), tbiVector.front());
+	tbiVector.erase(tbiVector.begin());
+
+	int	n = 2;
+	int	js = 0;
+	std::vector<int>::iterator	itTbiVector = tbiVector.begin();
+	std::vector<int>::iterator	itTemp;
+
+	while (1)
+	{
+		itTemp = tbiVector.begin();
+		js = ft_jacobsthal(n);
+		if (js >= (int)tbiVector.size())
+			break ;
+		std::advance(itTemp, js - 1);
+		tbiVector.insert(itTbiVector, *itTemp);
+		tbiVector.erase(itTemp + 1);
+		n++;
+		itTbiVector++;
+	}
+
+	for (std::vector<int>::iterator	it = tbiVector.begin(); it != tbiVector.end(); it++)
+		this->vector.insert(std::lower_bound(this->vector.begin(), this->vector.end(), *it), *it);
+
+	if (vecIsOdd == true)
+		this->vector.insert(std::lower_bound(this->vector.begin(), this->vector.end(), lastValue), lastValue);
 }

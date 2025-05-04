@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:44:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/04 22:07:05 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/04 23:30:37 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,16 @@ int	main(int argc, char **argv)
 	unsigned long	startMs = time.tv_usec;
 
 	pmergeme.sortVector();
+
+	gettimeofday(&time, 0);
+	float	endS = time.tv_sec;
+	float	endMs = time.tv_usec;
+	float	usedTime = float(endS - startS) + (float)((endMs - startMs) / 10000);
+
+	std::cout << "After:  ";
+	pmergeme.printVector();
+	std::cout << std::endl;
+	std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector : " << usedTime << " µs" << std::endl;
 
 	return (0);
 }
