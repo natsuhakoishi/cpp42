@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:44:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/04 23:30:37 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/05 00:06:06 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,23 @@ int	main(int argc, char **argv)
 	std::cout << "After:  ";
 	pmergeme.printVector();
 	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector : " << usedTime << " µs" << std::endl;
+
+	gettimeofday(&time, 0);
+	startS = time.tv_sec;
+	startMs = time.tv_usec;
+
+	pmergeme.sortList();
+
+	gettimeofday(&time, 0);
+	endS = time.tv_sec;
+	endMs = time.tv_usec;
+	usedTime = float(endS - startS) + (float)((endMs - startMs) / 10000);
+
+	std::cout << "Time to process a range of " << (argc - 1) << " elements with std::list : " << usedTime << " µs" << std::endl;
+
+	pmergeme.check_sorted();
 
 	return (0);
 }

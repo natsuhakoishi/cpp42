@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:44 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/04 23:25:53 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/05 00:18:51 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,38 @@ PmergeMe::PmergeMe(const PmergeMe &copy) { *this = copy; }
 PmergeMe &PmergeMe::operator = (const PmergeMe &copy) { (void)copy; return (*this); }
 
 PmergeMe::~PmergeMe() {}
+
+void	PmergeMe::check_sorted()
+{
+	bool	v_sorted = true;
+	bool	lst_sorted = true;
+
+	for (std::vector<int>::iterator it = this->vector.begin(); it != this->vector.end() - 1; it++)
+	{
+		if ((*it) > *(it + 1))
+		{
+			v_sorted = false;
+			break ;
+		}
+	}
+
+	std::list<int>::iterator	it = this->list.begin();
+	std::list<int>::iterator	nextIt = it;
+	++nextIt;
+
+	while (nextIt != this->list.end())
+	{
+		if (*it > *nextIt)
+		{
+			lst_sorted = false;
+			break ;
+		}
+		it++;
+		nextIt++;
+	}
+
+	std::cout << "Sort Status: Vector -> " << (v_sorted ? "Sorted" : "Not Sorted") << " | List -> " << (lst_sorted ? "Sorted" : "Not Sorted") << std::endl;
+}
 
 void	PmergeMe::fillVector(std::vector<int> temp)
 {
@@ -164,4 +196,123 @@ void	PmergeMe::sortVector()
 
 	if (vecIsOdd == true)
 		this->vector.insert(std::lower_bound(this->vector.begin(), this->vector.end(), lastValue), lastValue);
+}
+
+void	PmergeMe::mergeSortList(std::list<std::pair<int, int> > &lst)
+{
+	if (lst.size() < 2)
+		return ;
+
+	std::list<std::pair<int, int> >::iterator	itMiddle = lst.begin();
+	std::advance(itMiddle, lst.size() / 2);
+	std::list<std::pair<int, int> >	firstHalf(lst.begin(), itMiddle);
+	std::list<std::pair<int, int> >	secondHalf(itMiddle, lst.end());
+
+	mergeSortList(firstHalf);
+	mergeSortList(secondHalf);
+	lst.clear();
+
+	std::list<std::pair<int, int> >::iterator	itFirstHalf = firstHalf.begin();
+	std::list<std::pair<int, int> >::iterator	itSecondHalf = secondHalf.begin();
+	while (itFirstHalf != firstHalf.end() && itSecondHalf != secondHalf.end())
+	{
+		if ((*itFirstHalf).second < (*itSecondHalf).second)
+		{
+			lst.push_back(*itFirstHalf);
+			itFirstHalf++;
+		}
+		else
+		{
+			lst.push_back(*itSecondHalf);
+			itSecondHalf++;
+		}
+	}
+
+	while (itFirstHalf != firstHalf.end())
+	{
+		lst.push_back(*itFirstHalf);
+		itFirstHalf++;
+	}
+	while (itSecondHalf != secondHalf.end())
+	{
+		lst.push_back(*itSecondHalf);
+		itSecondHalf++;
+	}
+	// Debug usage
+	// for (std::list<std::pair<int, int> >::iterator it = lst.begin(); it != lst.end(); it++)
+	// 	std::cout << "(" << (*it).first << ", " << (*it).second << "), ";
+	// std::cout << std::endl;
+}
+
+void	PmergeMe::sortList()
+{
+	std::list<std::pair<int, int> >		pair;
+	std::pair<int, int>					temp;
+
+	bool	lstIsOdd = false;
+	int		lastValue;
+
+	if (this->list.size() <= 1)
+		return ;
+	if (this->list.size() % 2 == 1)
+	{
+		lstIsOdd = true;
+		lastValue = *(--this->list.end());
+		this->list.pop_back();
+	}
+
+	std::list<int>::iterator	itTmp;
+	for (std::list<int>::iterator it = this->list.begin(); it != this->list.end(); std::advance(it, 2))
+	{
+		itTmp = it;
+		std::advance(itTmp, 1);
+		temp = std::make_pair(*it, *itTmp);
+		if (temp.first > temp.second)
+		{
+			int swap = temp.first;
+			temp.first = temp.second;
+			temp.second = swap;
+		}
+		pair.push_back(temp);
+	}
+	mergeSortList(pair);
+
+	this->list.clear();
+	std::list<int>	tbiList;
+
+	for (std::list<std::pair<int, int> >::iterator	it = pair.begin(); it != pair.end(); it++)
+	{
+		tbiList.push_back((*it).first);
+		this->list.push_back((*it).second);
+	}
+
+	this->list.insert(this->list.begin(), tbiList.front());
+	tbiList.erase(tbiList.begin());
+
+	int	n = 2;
+	int	js = 0;
+	std::list<int>::iterator	itTbiList = tbiList.begin();
+	std::list<int>::iterator	itTemp;
+	std::list<int>::iterator	itErase;
+
+	while (1)
+	{
+		itTemp = tbiList.begin();
+		js = ft_jacobsthal(n);
+		if (js >= (int)tbiList.size())
+			break ;
+		std::advance(itTemp, js - 1);
+		tbiList.insert(itTbiList, *itTemp);
+		itErase = itTemp;
+		std::advance(itErase, 1);
+		tbiList.erase(itErase);
+		n++;
+		itTbiList++;
+	}
+
+	for (std::list<int>::iterator	it = tbiList.begin(); it != tbiList.end(); it++)
+		this->list.insert(std::lower_bound(this->list.begin(), this->list.end(), *it), *it);
+
+	if (lstIsOdd == true)
+		this->list.insert(std::lower_bound(this->list.begin(), this->list.end(), lastValue), lastValue);
 }
