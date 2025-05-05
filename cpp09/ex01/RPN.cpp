@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:42:46 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/27 22:39:57 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/06 01:32:42 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ RPN::~RPN() {}
 const char *InvalidInputException::what() const throw()
 {
 	return ("Exception: Error: Input is invalid");
+}
+
+const char *MathErrorException::what() const throw()
+{
+	return ("Exception: Error: Undefined Result");
 }
 
 void	RPN::parseInput(std::string input)
@@ -67,6 +72,8 @@ int		RPN::calculateRPN(char op, int a, int b)
 			return (a * b);
 
 		case ('/'):
+			if (b == 0)
+				throw (MathErrorException());
 			return (a / b);
 
 		default:

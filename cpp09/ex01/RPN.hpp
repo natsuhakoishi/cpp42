@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/27 22:28:35 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/06 01:32:14 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ class InvalidInputException : public std::exception
 	public:
 		const char *what() const throw();
 };
+
+class MathErrorException : public std::exception
+{
+	public:
+		const char *what() const throw();
+};
+
 
 class RPN
 {

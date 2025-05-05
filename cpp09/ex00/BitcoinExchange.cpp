@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:41:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/05 17:32:27 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/06 01:26:03 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,11 @@ void	BitcoinExchange::readInput(char *filename)
 	std::string		inputLine;
 
 	txtFile.open(filename, std::ios::in);
+	if (!txtFile.is_open())
+	{
+		std::cout << "Error: Cannot open files" << std::endl;
+		return ;
+	}
 	std::getline(txtFile, inputLine);
 	while (std::getline(txtFile, inputLine))
 	{
