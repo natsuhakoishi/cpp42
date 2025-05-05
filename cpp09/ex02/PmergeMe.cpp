@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:44 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/05 00:18:51 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:09:12 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,9 +126,9 @@ void	PmergeMe::mergeSortVector(std::vector<std::pair<int, int> > &v)
 		itSecondHalf++;
 	}
 	// Debug usage
-	// for (std::vector<std::pair<int, int> >::iterator it = v.begin(); it != v.end(); it++)
-	// 	std::cout << "(" << (*it).first << ", " << (*it).second << "), ";
-	// std::cout << std::endl;
+	for (std::vector<std::pair<int, int> >::iterator it = v.begin(); it != v.end(); it++)
+		std::cout << "(" << (*it).first << ", " << (*it).second << "), ";
+	std::cout << std::endl;
 }
 
 void	PmergeMe::sortVector()
@@ -187,6 +187,17 @@ void	PmergeMe::sortVector()
 		std::advance(itTemp, js - 1);
 		tbiVector.insert(itTbiVector, *itTemp);
 		tbiVector.erase(itTemp + 1);
+
+		// Debug Usage
+		// std::cout << "this->vector" << std::endl;
+		// for (std::vector<int>::iterator it = this->vector.begin(); it != this->vector.end(); it++)
+		// 	std::cout << " " << *it;
+		// std::cout << std::endl;
+		// std::cout << "tbiVector" << std::endl;
+		// for (std::vector<int>::iterator itv = tbiVector.begin(); itv != tbiVector.end(); itv++)
+		// 	std::cout << " " << *itv;
+		// std::cout << std::endl;
+
 		n++;
 		itTbiVector++;
 	}
