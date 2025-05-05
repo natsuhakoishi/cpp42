@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:41:03 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/26 15:34:31 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:32:27 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,8 @@ void	BitcoinExchange::exchange()
 			throw (InvalidInputException());
 		it--;
 	}
-	std::cout << this->tarikh << " => " << this->value << " = " << std::setprecision(2) << (this->value * it->second) << std::endl;
+	std::cout << std::fixed << std::setprecision(2);
+	std::cout << this->tarikh << " => " << this->value << " = " << (this->value * it->second) << std::endl;
 }
 
 void	BitcoinExchange::readInput(char *filename)
