@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:44:00 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/05 16:26:39 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:39:44 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,33 +52,24 @@ int	main(int argc, char **argv)
 	pmergeme.printVector();
 	std::cout << std::endl;
 
-	struct timeval	time;
-	gettimeofday(&time, 0);
-	unsigned long	startS = time.tv_sec;
-	unsigned long	startMs = time.tv_usec;
+	clock_t	startS = clock();
 
 	pmergeme.sortVector();
 
-	gettimeofday(&time, 0);
-	unsigned long	endS = time.tv_sec;
-	unsigned long	endMs = time.tv_usec;
-	unsigned long	usedTime = (endS - startS) * 1000000 + (endMs - startMs);
+	clock_t	endS = clock();
+	double	usedTime = static_cast<double>(endS - startS) * 1e6 / CLOCKS_PER_SEC;
 
 	std::cout << "After:  ";
 	pmergeme.printVector();
 	std::cout << std::endl;
 	std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector : " << usedTime << " µs" << std::endl;
 
-	gettimeofday(&time, 0);
-	startS = time.tv_sec;
-	startMs = time.tv_usec;
+	startS = clock();
 
 	pmergeme.sortList();
 
-	gettimeofday(&time, 0);
-	endS = time.tv_sec;
-	endMs = time.tv_usec;
-	usedTime = (endS - startS) * 1000000 + (endMs - startMs);
+	endS = clock();
+	usedTime = static_cast<double>(endS - startS) * 1e6 / CLOCKS_PER_SEC;
 
 	std::cout << "Time to process a range of " << (argc - 1) << " elements with std::list   : " << usedTime << " µs" << std::endl;
 

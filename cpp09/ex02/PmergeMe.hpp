@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:52 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/05 00:06:01 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:35:51 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <vector>
 # include <list>
 # include <algorithm>
-# include <sys/time.h>
+# include <ctime>
 
 class PmergeMe
 {

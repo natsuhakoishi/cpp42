@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:44 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/05/05 17:09:12 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:35:04 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,10 +125,10 @@ void	PmergeMe::mergeSortVector(std::vector<std::pair<int, int> > &v)
 		v.push_back(*itSecondHalf);
 		itSecondHalf++;
 	}
-	// Debug usage
-	for (std::vector<std::pair<int, int> >::iterator it = v.begin(); it != v.end(); it++)
-		std::cout << "(" << (*it).first << ", " << (*it).second << "), ";
-	std::cout << std::endl;
+	// // Debug usage
+	// for (std::vector<std::pair<int, int> >::iterator it = v.begin(); it != v.end(); it++)
+	// 	std::cout << "(" << (*it).first << ", " << (*it).second << "), ";
+	// std::cout << std::endl;
 }
 
 void	PmergeMe::sortVector()
