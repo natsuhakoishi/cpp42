@@ -6,7 +6,7 @@
 /*   By: yyean-wa < yyean-wa@student.42kl.edu.my    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:42:57 by yyean-wa          #+#    #+#             */
-/*   Updated: 2025/04/27 22:31:42 by yyean-wa         ###   ########.fr       */
+/*   Updated: 2025/05/09 13:51:42 by yyean-wa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ int	main(int argc, char **argv)
 
 	RPN	rpn;
 	rpn.solveRPN(input);
+	return (0);
 }
